@@ -49,7 +49,7 @@ const App = () => {
 
   const deleteUser = async (id) => {
     try {
-      await fetch(`${api}/${id}`, {
+      await fetch(`${api}?${id}`, {
         method: "DELETE",
       });
 
@@ -59,18 +59,14 @@ const App = () => {
     }
   };
 
-  const addUser = async ()=>{
+  const addUser = async (newUser)=>{
     try {
       let response = await fetch(api,{
         method:'POST', 
         headers:{
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name: name,
-          description: description,
-          isCompleted: isCompleted
-        })
+        body: JSON.stringify(newUser)
       })
 
       setName('')
@@ -142,7 +138,10 @@ const App = () => {
                 Отмена
               </Button>
               <button className='border p-[5px] rounded-[10px] bg-[blue] text-[white]'
-              onClick={addUser}
+              onClick={()=> addUser({name:name,
+                description: description,
+                isCompleted: isCompleted
+              })}
               >
                 Add User
               </button>
