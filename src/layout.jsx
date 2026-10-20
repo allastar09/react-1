@@ -9,6 +9,7 @@ const Layout = () => {
         <img src={logo} alt="" />
         <Link to={"/"} className='ml-[20px]'>Home</Link >
         <Link to={'/about'}>About</Link>
+        <Link to={'/careers'}>Careers</Link>
         <button className='w-[200px] h-[50px] rounded-2xl text-[white] bg-[#0A84FF] text-center'>Contact Us</button>
       </nav>
       <Outlet/>

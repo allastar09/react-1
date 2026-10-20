@@ -5,6 +5,7 @@ import Layout from './layout';
 import Home from './pages/Home';
 import Service from './pages/Service';
 import NotFound from './pages/NotFound';
+import Careers from './pages/Careers';
 
 const App = () => {
 const router = createBrowserRouter([
@@ -22,6 +23,9 @@ const router = createBrowserRouter([
       {
         path:'*',
         element:<NotFound/>
+      },{
+        path:'/careers',
+        element: <Careers/>
       }
     ]
   },
